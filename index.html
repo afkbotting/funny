@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byfron.dance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="button"><b class="next glowing-text">Click To Continue</b></div>
+
+    <div id="blur-box">
+        <div id="profile-picture">
+            <img src="" alt="Profile Picture" id="profile-pic">
+        </div>
+        
+        <div id="username">Username</div>
+        <div id="bio">Bio</div>
+        <a id="discord-link" href="" target="_blank">
+            <img src="discord.png" id="discord-logo" alt="Discord Logo">
+        </a>
+    </div>
+
+    <video id="video-background" loop>
+        <source src="" type="video/mp4" id="video-source">
+    </video>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("button").click();
+        }, 0);
+
+        document.getElementById("button").addEventListener("click", function () {
+            var bgAudio = document.getElementById("video-background"); 
+            document.getElementById("blur-box").style.display = "block";
+            document.getElementById("video-background").style.display = "block";
+            bgAudio.volume = 0.15;
+            bgAudio.play();
+        });
+
+        var path = window.location.pathname;
+        if (path === '/Murdered') {
+            updateUser("Murdered", "murderedpfp.gif", "I have nitro", "https://discord.com/users/1017581502357323837", "https://github.com/afkbotting/KeyboardSmash/assets/112919165/e6503c0a-f5b1-496d-b8fc-201e5f99683a", "Murdered! Byfron.dance");
+        } else if (path === '/star') {
+            updateUser("star1", "starpfp.png", "Undetected forever and always", "https://discord.com/users/1211713421704306698", "https://github.com/afkbotting/VideoHostingThing/assets/112919165/a4448bb6-726c-41f0-8440-24f53a0801f1", "Star! Byfron.dance/star");
+        } else if (path === '/polar') {
+            updateUser("Polar", "polarpfp.png", "the one who made this shit", "https://discord.com/users/1203761962836828256", "https://github.com/afkbotting/VideoHostingThing/assets/112919165/a5616aad-4266-4970-8b54-d0fb88869383", "Polar! Byfron.dance/polarr");
+        }
+
+        function updateUser(username, profilePic, bio, discordLink, videoSource, pageTitle) {
+            document.getElementById("username").innerText = username;
+            document.getElementById("profile-picture").innerHTML = '<img src="' + profilePic + '" alt="Profile Picture">';
+            document.getElementById("bio").innerText = bio;
+            document.getElementById("discord-link").setAttribute("href", discordLink);
+            document.getElementById("video-source").src = videoSource;
+            document.title = pageTitle;
+            document.getElementById("video-background").load();
+        }
+    </script>
+</body>
+</html>
