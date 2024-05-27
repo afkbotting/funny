@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murdered! Byfron.dance</title>
+    <title>Murdered! Bygone.dance</title>
     <style>
         html {
             -webkit-touch-callout: none;
@@ -124,7 +125,7 @@
 <body>
     <div id="blur-box">
         <div id="profile-picture">
-            <img src="https://raw.githubusercontent.com/afkbotting/KeyboardSmash/main/murderedpfp.gif" alt="Profile Picture">
+            <img src="https://github.com/afkbotting/KeyboardSmash/blob/main/murderedpfp.gif" alt="Profile Picture">
         </div>
         
         <div id="username">Murdered</div>
@@ -135,18 +136,25 @@
     </div>
 
     <video id="video-background" loop autoplay>
-        <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/112919165/334172477-53ebf89b-f6b5-4030-b70a-7d424a0960fe.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240527%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240527T170328Z&X-Amz-Expires=300&X-Amz-Signature=d8562f08997d46c23ea54726c9942bada1916b16271f4f88821760e3cdc95a05&X-Amz-SignedHeaders=host&actor_id=112919165&key_id=0&repo_id=806140502" type="video/mp4">
+        <source src="https://private-user-images.githubusercontent.com/112919165/334172477-53ebf89b-f6b5-4030-b70a-7d424a0960fe.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY4MzEwNTksIm5iZiI6MTcxNjgzMDc1OSwicGF0aCI6Ii8xMTI5MTkxNjUvMzM0MTcyNDc3LTUzZWJmODliLWY2YjUtNDAzMC1iNzBhLTdkNDI0YTA5NjBmZS5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyN1QxNzI1NTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jYThmMjU3YThjNGMxZjE3Y2U4NjgzY2QzZjQwMzUzYjU0ZGNkMmIyNmYxZTQ5NzU4ZTliNjI5OTQxMzk2MWIzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.lP3uBMhmyNXunExbsBj2yrEqSze-sKEnJF6W7dHk_D0" type="video/mp4">
+        <!-- Provide additional video sources here -->
     </video>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            button.style.animation = "fadeout 1s forwards";
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
             var bgAudio = document.getElementById("video-background"); 
-            document.getElementById("blur-box").style.display = "block";
-            document.getElementById("video-background").style.display = "block";
+            var blurBox = document.getElementById("blur-box");
             bgAudio.volume = 0.15;
-            bgAudio.play();
-        });
+            blurBox.style.display = "block";
+            document.getElementById("video-background").style.display = "block";
+            blurBox.style.animation = "fadein 1s forwards";
+            
+            document.getElementById("discord-link").addEventListener("click", function(event) {
+                event.preventDefault();
+                window.open(this.getAttribute("href"), "_blank");
+            });
+
+            var byfronPath = window.location.pathname;
         });
     </script>
 </body>
