@@ -1,0 +1,8 @@
+html {user-select: none;}
+body {background-color: #060707; padding: 0; margin: 0; height: 100%; font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif; text-align: center; color: white;}
+#blur-box {display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 31px; width: 35%; background-color: rgba(0, 0, 0, 0.1); backdrop-filter: blur(15px); border-radius: 10px; color: rgba(255, 255, 255, 0.774); text-align: center;}
+#profile-picture {width: 100px; height: 100px; background-color: transparent; border-radius: 50%; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); overflow: hidden;} #profile-picture img {width: 100%; height: 100%; object-fit: cover;}
+#username {font-size: 35px; margin-top: 100px; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);}
+#bio {font-size: 18px; margin-top: 10px; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);}
+#video-background {display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;}
+#discord-logo {position: absolute; bottom: 10px; right: 10px; width: 50px; height: auto;}
