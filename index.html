@@ -137,32 +137,6 @@
 
     <video id="video-background" loop autoplay>
         <source src="https://github.com/afkbotting/KeyboardSmash/raw/master/assets/112919165/e6503c0a-f5b1-496d-b8fc-201e5f99683a.mp4" type="video/mp4">
-        <!-- Provide additional video sources here -->
     </video>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var bgAudio = document.getElementById("video-background"); 
-            var blurBox = document.getElementById("blur-box");
-            bgAudio.volume = 0.15;
-            blurBox.style.display = "block";
-            document.getElementById("video-background").style.display = "block";
-            blurBox.style.animation = "fadein 1s forwards";
-            
-            document.getElementById("discord-link").addEventListener("click", function(event) {
-                event.preventDefault();
-                window.open(this.getAttribute("href"), "_blank");
-            });
-
-            var byfronPath = window.location.pathname;
-            if (byfronPath === '/star') {
-                document.getElementById("username").innerText = "star1";
-                document.getElementById("profile-picture").innerHTML = '<img src="profile2.png" alt="Profile Picture">';
-                document.getElementById("bio").innerText = "Undetected forever and always";
-                document.getElementById("discord-link").setAttribute("href", "https://discord.com/users/1211713421704306698");
-                document.title = "Star! Byfron.dance/star";
-            }
-        });
-    </script>
 </body>
 </html>
