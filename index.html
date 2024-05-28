@@ -3,158 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murdered! Bygone.dance</title>
-    <style>
-        html {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        body {
-            background-color: #060707;
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-            text-align: center;
-            color: white;
-        }
-
-        #blur-box {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 31px;
-            width: 35%;
-            background-color: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 10px;
-            color: rgba(255, 255, 255, 0.774);
-            text-align: center;
-            animation: fadein 1s forwards;
-        }
-
-        #profile-picture {
-            width: 100px;
-            height: 100px;
-            background-color: #ffffff00;
-            border-radius: 50%;
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-        }
-
-        #profile-picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        #username {
-            font-size: 35px;
-            margin-top: 100px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-        #bio {
-            font-size: 18px;
-            margin-top: 10px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-
-        #video-background {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            animation: fadein 1s forwards;
-        }
-
-        .next {
-            top: 50%;
-            left: 50%;
-            color: #fff;
-            position: absolute;
-            font-weight: normal;
-            font-size: 20px;
-            transform: translate(-50%, -50%);
-            font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-        }
-
-        @keyframes fadeout {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        #discord-logo {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 50px;
-            height: auto;
-        }
-    </style>
+    <title>Byfron.dance</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div id="button"><b class="next glowing-text">Click To Continue</b></div>
+
     <div id="blur-box">
         <div id="profile-picture">
-            <img src="murderedpfp.gif" alt="Profile Picture">
+            <img src="" alt="Profile Picture" id="profile-pic">
         </div>
         
-        <div id="username">Murdered</div>
-        <div id="bio">I have nitro</div>
-        <a id="discord-link" href="https://discord.com/users/1017581502357323837">
+        <div id="username">Username</div>
+        <div id="bio">Bio</div>
+        <a id="discord-link" href="" target="_blank">
             <img src="discord.png" id="discord-logo" alt="Discord Logo">
         </a>
     </div>
 
-    <video id="video-background" loop autoplay>
-        <source src="https://github.com/afkbotting/funny/assets/112919165/7c414345-bed4-42a6-a247-d93427bf7bd2" type="video/mp4">
+    <video id="video-background" loop>
+        <source src="" type="video/mp4" id="video-source">
     </video>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var blurBox = document.getElementById("blur-box");
+        setTimeout(function() {
+            document.getElementById("button").click();
+        }, 0);
+
+        document.getElementById("button").addEventListener("click", function () {
             var bgAudio = document.getElementById("video-background"); 
             document.getElementById("blur-box").style.display = "block";
             document.getElementById("video-background").style.display = "block";
             bgAudio.volume = 0.15;
             bgAudio.play();
-            document.getElementById("video-background").style.display = "block";
-            document.getElementById("discord-link").addEventListener("click", function(event) {
-                event.preventDefault();
-                window.open(this.getAttribute("href"), "_blank");
-            });
-
-            var byfronPath = window.location.pathname;
         });
+
+        var path = window.location.pathname;
+        if (path === '/Murdered') {
+            updateUser("Murdered", "murderedpfp.gif", "I have nitro", "https://discord.com/users/1017581502357323837", "https://github.com/afkbotting/KeyboardSmash/assets/112919165/e6503c0a-f5b1-496d-b8fc-201e5f99683a", "Murdered! Byfron.dance");
+        } else if (path === '/star') {
+            updateUser("star1", "starpfp.png", "Undetected forever and always", "https://discord.com/users/1211713421704306698", "https://github.com/afkbotting/VideoHostingThing/assets/112919165/a4448bb6-726c-41f0-8440-24f53a0801f1", "Star! Byfron.dance/star");
+        } else if (path === '/polar') {
+            updateUser("Polar", "polarpfp.png", "the one who made this shit", "https://discord.com/users/1203761962836828256", "https://github.com/afkbotting/VideoHostingThing/assets/112919165/a5616aad-4266-4970-8b54-d0fb88869383", "Polar! Byfron.dance/polarr");
+        }
+
+        function updateUser(username, profilePic, bio, discordLink, videoSource, pageTitle) {
+            document.getElementById("username").innerText = username;
+            document.getElementById("profile-picture").innerHTML = '<img src="' + profilePic + '" alt="Profile Picture">';
+            document.getElementById("bio").innerText = bio;
+            document.getElementById("discord-link").setAttribute("href", discordLink);
+            document.getElementById("video-source").src = videoSource;
+            document.title = pageTitle;
+            document.getElementById("video-background").load();
+        }
     </script>
 </body>
 </html>
